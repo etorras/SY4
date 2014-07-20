@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Browser</th>
+        <th>Agent</th>
+        <th>IP</th>
+        <th>Os</th>
+        <th>Referrer</th>
+    </tr>
+{% for log in logs %}
+    <tr>
+        <td>{{ log.date | date }}</td>
+        <td>{{ log.browser }}</td>
+        <td>{{ log.agent }}</td>
+        <td>{{ log.ip }}</td>
+        <td>{{ log.os }}</td>
+        <td>{{ log.referrer }}</td>
+    </tr>
+{% endfor %}
+</table>

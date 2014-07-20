@@ -126,4 +126,13 @@ class WebController extends Controller
         }
         return $browser;
     }
+
+    public function resultAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $logs = $em->getRepository('SYWebBundle:Log')->findAll();
+
+        return $this->render('SYWebBundle:Web:logs.html.twig', ['logs' => $logs]);
+    }
 }
